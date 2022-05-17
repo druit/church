@@ -1,0 +1,15 @@
+{
+    "gen_title": "Εκκλησία",
+    "ph_sex": "Φύλο",
+    "ph_name": "Όνομα",
+    "ph_lastname": "Επώνυμο",
+    "ph_number": "Αριθμός",
+    "ph_secondname": "Όνομα πατρός",
+    "ph_year": "Έτος",
+    "gen_search": "Αναζήτηση",
+    "gen_male": "Άνδρας",
+    "gen_female": "Γυναίκα",
+    "option_vevaiwsi": "Βεβαίωση",
+    "option_other": "Άλλο",
+    "download_file": "Δημιουργία"
+}

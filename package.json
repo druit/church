@@ -1,0 +1,82 @@
+{
+    "name": "church",
+    "productName": "church",
+    "version": "1.0.0",
+    "description": "My Electron application description",
+    "main": "src/main.js",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish",
+        "lint": "echo \"No linting configured\"",
+        "build-installer-windows": "electron-builder",
+        "build-installer-linux": "electron-builder --linux"
+    },
+    "build": {
+        "appId": "church",
+        "win": {
+            "target": [
+                "nsis"
+            ],
+            "icon": "src/icon.ico",
+            "requestedExecutionLevel": "requireAdministrator"
+        }
+    },
+    "nsis": {
+        "installerIcon": "src/icon.ico",
+        "uninstallerIcon": "src/icon.ico",
+        "installDisplayName": "Church",
+        "license": "license.txt",
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true
+    },
+    "keywords": [
+        "Electron",
+        "church",
+        "start"
+    ],
+    "author": {
+        "name": "Nikolaos Karanikolas",
+        "email": "nikolakis95@hotmail.com"
+    },
+    "license": "MIT",
+    "config": {
+        "forge": {
+            "packagerConfig": {},
+            "makers": [
+                {
+                    "name": "@electron-forge/maker-squirrel",
+                    "config": {
+                        "name": "church"
+                    }
+                },
+                {
+                    "name": "@electron-forge/maker-zip",
+                    "platforms": [
+                        "darwin"
+                    ]
+                },
+                {
+                    "name": "@electron-forge/maker-deb",
+                    "config": {}
+                },
+                {
+                    "name": "@electron-forge/maker-rpm",
+                    "config": {}
+                }
+            ]
+        }
+    },
+    "dependencies": {
+        "electron-squirrel-startup": "^1.0.0"
+    },
+    "devDependencies": {
+        "@electron-forge/cli": "^6.0.0-beta.63",
+        "@electron-forge/maker-deb": "^6.0.0-beta.63",
+        "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+        "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+        "@electron-forge/maker-zip": "^6.0.0-beta.63",
+        "electron": "18.2.3"
+    }
+}

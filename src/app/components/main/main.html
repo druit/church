@@ -1,0 +1,103 @@
+<div class="bg-theme text-center p-5" style="height: 100%;">
+    <img src="assets/images/church.png" alt="es">
+    <!-- <div>{{ 'gen_title' | translate }}</div> -->
+    <div class="m-4">
+        <div>Επιλογή excel:</div>
+        <input name="excel" type="file" ngf-select="SelectFile($file)" />
+    </div>
+    <hr />
+    <!-- <div>
+        <select ng-model="sex" class="m-4">
+            <option value="male">{{'gen_male' | translate}}
+            <option value="female">{{'gen_female' | translate}}
+          </select>
+    </div> -->
+    <div class="mb-2">
+        <div ng-bind="'gen_search' | translate"></div>
+        <input type="text" placeholder="{{ 'ph_name' | translate}}" ng-model="firstname">
+        <input type="text" placeholder="{{ 'ph_lastname' | translate}}" ng-model="lastname">
+        <input type="text" placeholder="{{ 'ph_secondname' | translate}}" ng-model="secondname">
+        <input type="text" placeholder="{{ 'ph_year' | translate}}" ng-model="yearMarried">
+    </div>
+    <div>
+        <button style="margin-right:100px" class="button" ng-click="previous()" ng-if="dataLength>1"><--</button>
+        <button type="button" class="button" ng-click="search(sex,name)">{{'gen_search' | translate}}</button>
+        <button style="margin-left:100px" class="button" ng-click="next()" ng-if="dataLength>1">--></button>
+    </div>
+    <div style="margin-top: 15px">
+        <div>Αποτέλεσμα αναζήτησης</div>
+        <div ng-if="dataLength>0"> ({{index+1}} / {{dataLength}}) :</div>
+        <table class="center">
+            <!--  -->
+            <th colspan="10">Γενικές πληροφορίες</th>
+            <tr>
+                <td>Αριθμός Βιβλίου</td>
+                <td>Αριθμός</td>
+                <td>Ημερομηνία Γάμου (τελέωσεως)</td>
+                <td colspan="10">Όνομ/Επώνυμο του τελέσαντος</td>
+            </tr>
+            <tr>
+                <td>{{displayFindPerson.book_number}}</td>
+                <td>{{displayFindPerson.id_number}}</td>
+                <td>{{displayFindPerson.date_married}} {{displayFindPerson.month_married}} {{displayFindPerson.year_married}}</td>
+                <td colspan="10">{{displayFindPerson.responsible}}</td>
+            </tr>
+            <!--  -->
+            <th colspan="10">ΝΥΜΦΙΟΥ</th>
+            <tr>
+                <td>Κύριο Όνομα</td>
+                <td>Όνομα Πατρός</td>
+                <td>Επώνυμον</td>
+                <td>Ηλικία</td>
+                <td>Α' ή Β' γάμον</td>
+                <td>Διαμονή</td>
+            </tr>
+            <tr>
+                <td>{{displayFindPerson.firstname_1}}</td>
+                <td>{{displayFindPerson.secondname_1}}</td>
+                <td>{{displayFindPerson.lastname_1}}</td>
+                <td>{{displayFindPerson.age_1}}</td>
+                <td>{{displayFindPerson.type_1}}</td>
+                <td>{{displayFindPerson.place_1}}</td>
+            </tr>
+            <!--  -->
+            <th colspan="10">ΝΥΜΦΗΣ</th>
+            <tr>
+                <td>Κύριο Όνομα</td>
+                <td>Όνομα Πατρός</td>
+                <td>Επώνυμον</td>
+                <td>Ηλικία</td>
+                <td>Α' ή Β' γάμον</td>
+                <td>Διαμονή</td>
+            </tr>
+            <tr>
+                <td>{{displayFindPerson.firstname_2}}</td>
+                <td>{{displayFindPerson.secondname_2}}</td>
+                <td>{{displayFindPerson.lastname_2}}</td>
+                <td>{{displayFindPerson.age_2}}</td>
+                <td>{{displayFindPerson.type_2}}</td>
+                <td>{{displayFindPerson.place_2}}</td>
+            </tr>
+            <!--  -->
+            <th colspan="10">ΠΑΡΑΝΥΜΦΟΥ</th>
+            <tr>
+                <td colspan="3">Όνομ/Επώνυμο</td>
+                <td colspan="3">Διαμονή</td>
+            </tr>
+            <tr>
+                <td colspan="3">{{displayFindPerson.bridesmaidfull}}</td>
+                <td colspan="3">{{displayFindPerson.place}}</td>
+            </tr>
+            <!--  -->
+        </table>
+        <!-- <div>{{displayFindPerson | json }}</div> -->
+    </div>
+
+    <hr />
+    <select ng-model="office" class="m-4" ng-change="changeOffice(office)">
+        <option value="vevaiwsi">{{'option_vevaiwsi' | translate}}
+        <option value="other">{{'option_other' | translate}}
+    </select>
+    <input type="button" multiple="multiple" value="{{'download_file' | translate}}" ng-click="UploadFiles()" />
+    <div ng-bind-html="Result"></div>
+</div>

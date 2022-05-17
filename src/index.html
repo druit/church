@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Nikolaos Karanikolas">
+    <title>Church</title>
+
+    <script src="assets/libs/jquery.min.js"></script>
+    <script src="assets/libs/underscore-min.js"></script>
+
+    <script src="assets/libs/angular/angular.min.js"></script>
+    <script src="assets/libs/angular/angular-route.min.js"></script>
+    <script src="assets/libs/angular/angular-translate.min.js"></script>
+    <script src="assets/libs/angular/angular-translate-loader-partial.min.js"></script>
+    <script src="assets/libs/angular/angular-sanitize.min.js"></script>
+    <script src="assets/libs/angular/angular-animate.min.js"></script>
+    <script src="assets/libs/angular/angular-file-upload.min.js"></script>
+    <script src="assets/libs/angular/angular-word-file-upload.min.js"></script>
+    <script src="assets/libs/angular/angular-jszip.js"></script>
+    <script src="assets/libs/angular/angular-xlsx.full.min.js"></script>
+    <script src="assets/libs/ngDialog/ngDialog.js"></script>
+    <script src="assets/libs/word/docxtemplater.js"></script>
+    <script src="assets/libs/word/pizzip-utils.js"></script>
+    <script src="assets/libs/word/pizzip.js"></script>
+    <script src="assets/libs/word/saver.js"></script>
+
+    <link href="assets/css/ngDialog/ngDialog-theme-default.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/ngDialog/ngDialog.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/fontAwesome/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
+</head>
+
+<body ng-app="mainApp" ng-controller="AppCtrl" class="bg-theme ">
+    <div class="main-app m-0 p-0 ">
+        <div ng-view class="main-view m-0 p-0"></div>
+    </div>
+</body>
+
+<!-- <script src="config.js"></script> -->
+<script src="app/app.module.js"></script>
+<script src="app/appController.js"></script>
+<script src="app/app.routes.js"></script>
+
+<!-- Controllers -->
+<script src="app/components/main/mainController.js"></script>
+
+<!-- Services -->
+<script src="app/services/mapService.js"></script>
+
+</html>
